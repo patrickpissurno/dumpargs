@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 
 namespace DumpArgs
 {
@@ -18,14 +19,16 @@ namespace DumpArgs
                 Console.WriteLine();
             }
 
+            Console.WriteLine("Working Directory:");
+            Console.WriteLine(Directory.GetCurrentDirectory());
+            Console.WriteLine();
+
             Console.WriteLine("Dumped args:");
 
             if (args.Length > 0)
             {
                 Console.WriteLine();
-                foreach (string s in args)
-                    Console.Write(s);
-                Console.WriteLine();
+                Console.WriteLine(string.Join(" ", args));
             }
 
             Console.WriteLine();
